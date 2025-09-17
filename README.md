@@ -1,6 +1,6 @@
 ## opencode + Cloudflare Containers
 
-Just a demo.
+Just a demo. No auth. Run opencode [in server mode](https://opencode.ai/docs/server/) from a remote container, running on Cloudflare.
 
 ```
 $ docker build --no-cache -t opencode-example .
