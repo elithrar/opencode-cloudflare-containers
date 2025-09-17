@@ -44,7 +44,7 @@ const bearerAuth = (secret: string) => {
   };
 };
 
-app.use("*", bearerAuth("HELLO_DUSTY_hunter2"));
+// app.use("*", bearerAuth("HELLO_DUSTY_hunter2"));
 
 app.all("*", async (c) => {
   const container = getContainer(c.env.MY_CONTAINER);

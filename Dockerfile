@@ -1,14 +1,8 @@
-# Use an official lightweight Node.js image
-FROM node:20-alpine
-
-# Install opencode CLI globally
-RUN npm install -g opencode
-
-# Set working directory
+FROM node:20-slim
+RUN npm install -g opencode-ai
+# Debug: show where npm puts things
+RUN which opencode
 WORKDIR /app
-
-# Expose default port used by opencode serve (default: 3000)
 EXPOSE 4096
-
-# Run opencode serve as the container entrypoint
-ENTRYPOINT ["opencode", "serve"]
+ENTRYPOINT ["opencode"]
+CMD ["serve", "--port", "4096", "--hostname", "0.0.0.0"]
